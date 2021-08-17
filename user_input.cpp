@@ -47,7 +47,7 @@ Gamemode UserInput::GetGamemode() const
 void UserInput::GameIsOver(bool solved, std::vector<Color> code)
 {
 	if (solved)
-		std::cout << "You have guesses the code, congratulations! The code was: ";
+		std::cout << "You have guessed the code, congratulations! The code was: ";
 	else
 		std::cout << "You have run out of attempts, the code was: ";
 
