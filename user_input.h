@@ -15,25 +15,25 @@ public:
 	~UserInput() {};
 
 	// This will request a guess from the user via. the 
-	// standard input and return it as a vector of colors.
-	std::vector<Color> GetGuess();
+	// standard input and return it as a Code object.
+	Code GetGuess();
 	
 	// This will request a code from the user via. the 
-	// standard input and return it as a vector of colors.
-	std::vector<Color> GetSecretCode();
+	// standard input and return it as a Code object.
+	Code GetSecretCode();
 
 	// This will request a gamemode from the user via. the 
 	//   standard input and return it as a Gamemode.
 	Gamemode GetGamemode() const;
 
-	void GameIsOver(bool solved, std::vector<Color> code);
+	void GameIsOver(bool solved, Code code);
 
 private:
-	bool validGuess(std::vector<char>& split);
-	std::vector<char> splitInput(std::string& str, const std::string& delimiter);
-	bool validChar(const char& color);
+	bool ValidGuess(std::vector<char>& split);
+	std::vector<char> SplitInput(std::string& str, const std::string& delimiter);
+	bool ValidChar(const char& color);
 
 	// Helper function for GetGuess and GetSecretCode
-	std::vector<Color> GetCode();
+	Code GetCode();
 };
 #endif USER_INPUT_

@@ -11,10 +11,11 @@
 class Code {
 public:
 	// Make the class copyable and movable.
-	//Code(const Code& other) = default;
-	//Code& operator=(const Code& other) = default;
+	Code(const Code& other) = default;
+	Code& operator=(const Code& other) = default;
 
 	Code(const std::vector<Color>& code) : code_(code) {};
+	Code() {};
 	~Code() {};
 
 	// Counts number of pegs with both correct color and placement.
@@ -25,12 +26,12 @@ public:
 	int CountCorrectColor(const Code& code) const;
 
 	// Generates a random code.
-	static std::vector<Color> GenerateCode();
+	static Code GenerateCode();
 
 	// Returns code_
 	std::vector<Color> code() const;
 
 protected: // This class could likely be inherited.
-	const std::vector<Color> code_;
+	std::vector<Color> code_;
 };
 #endif CODE_

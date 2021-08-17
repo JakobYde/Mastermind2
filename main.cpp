@@ -6,24 +6,24 @@
 
 int main () 
 {
+	const int available_attempts = 10;
+
 	while (true)
 	{
 		std::shared_ptr<Console> console = std::make_shared<Console>();
 		UserInput ui;
-		std::vector<Color> secret_code;
-
 		Gamemode gm = ui.GetGamemode();
 
-		if (gm == Gamemode::kSingleplayer)
-			secret_code = Code::GenerateCode();
-		else if (gm == Gamemode::kMultiplayer)
+		Code secret_code = Code::GenerateCode();
+
+		if (gm == Gamemode::kMultiplayer)
 			secret_code = ui.GetSecretCode();
 
-		Game game(Code(secret_code), 10, console);
+		Game game(secret_code, available_attempts, console);
 
 		console->Print();
 
-		std::vector<Color> guess;
+		Code guess;
 		while (!game.IsSolved() && !game.AllGuessesUsed())
 		{
 			guess = ui.GetGuess();

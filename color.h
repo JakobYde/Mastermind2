@@ -8,7 +8,7 @@
 enum class Color {
     kRed, kGreen, kBlue, kYellow,
     kPurple, kOrange, kCyan, kWhite, 
-    kMax = 8, kNull
+    kMax
 };
 
 const std::vector<char> kColors{ 'r', 'g', 'b', 'y', 'p', 'o', 'c', 'w' };
