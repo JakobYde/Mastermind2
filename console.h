@@ -16,12 +16,13 @@ public:
 	Console(const Console&) = delete;
 	Console& operator=(const Console&) = delete;
 
-	// This will request a guess from the user in the standard 
-	//   input and return it as a Code object.
+	// Updates the game in the console (called from MakeGuess in Game)
 	void UpdateGuess(const Code & guess, int number_of_guess, int correct_placement, int correct_color);
 
+	// Updates game to show code in console
 	void UpdateFinished(const Code& code);
 
+	// Prints the current board to the console
 	void Print() const;
 
 private:
@@ -29,7 +30,7 @@ private:
 	// require a maximum of 10 allowed guesses.
 	std::vector<std::string> board_ = 
 		{ "          --------------------- ",
-		  "Answer:   |   H   H   H   H   | ",
+		  "Code:     |   H   H   H   H   | ",
 	   	  "          --------------------- ",
 		  "Guess 10: |   X   X   X   X   | ",
 		  "Guess 9:  |   X   X   X   X   | ",

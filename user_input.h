@@ -26,6 +26,8 @@ public:
 	//   standard input and return it as a Gamemode.
 	Gamemode GetGamemode() const;
 
+	// This should be called when the game is over,
+	// it asks the player to press Enter for a new game.
 	void GameIsOver(bool solved, Code code);
 
 private:

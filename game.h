@@ -24,9 +24,10 @@ public:
 	// Updates game logic
 	void MakeGuess(const Code& guess);
 
-	// Returns True if any of the past codes has been the solution.
+	// Returns True if the code is guessed.
 	bool IsSolved() const;
 
+	// Returns true if all attempts	have been used.
 	bool AllGuessesUsed() const;
 
 private:

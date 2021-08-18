@@ -4,7 +4,6 @@
 #include <vector>
 #include <assert.h>
 #include <algorithm>
-#include <unordered_map>
 
 #include "color.h"
 
@@ -22,7 +21,7 @@ public:
 	int CountCorrectPlacement(const Code& code) const;
 
 	// Counts number of pegs with correct color but incorrect placement. 
-	//   Example: [R, R, G], [B, B, R] returns 1.
+	//   Example: [R, R, G, Y], [B, B, R, B] returns 1.
 	int CountCorrectColor(const Code& code) const;
 
 	// Generates a random code.
